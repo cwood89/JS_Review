@@ -6,7 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Even More 7</title>
   <style>
+    #grid {
+      display: grid;
+      grid-template-columns: 200px 200px 200px;
+      grid-gap: 10px;
+      background-color: #fff;
+      color: #444;
+    }
 
+    #grid>div {
+      background: #EDE7F6;
+      padding: 1.5rem;
+      border-radius: 1rem;
+    }
   </style>
 </head>
 
@@ -14,18 +26,20 @@
   <h1>Even More 7</h1>
   <p>Write a program that prints a multiplication table for numbers up to 12.</p>
   <br />
-  <div id="one">1</div>
-  <div id="two">2</div>
-  <div id="three">3</div>
-  <div id="four">4</div>
-  <div id="five">5</div>
-  <div id="six">6</div>
-  <div id="seven">7</div>
-  <div id="eight">8</div>
-  <div id="nine">9</div>
-  <div id="ten">10</div>
-  <div id="eleven">11</div>
-  <div id="twelve">12</div>
+  <div id="grid">
+    <div id="one">1</div>
+    <div id="two">2</div>
+    <div id="three">3</div>
+    <div id="four">4</div>
+    <div id="five">5</div>
+    <div id="six">6</div>
+    <div id="seven">7</div>
+    <div id="eight">8</div>
+    <div id="nine">9</div>
+    <div id="ten">10</div>
+    <div id="eleven">11</div>
+    <div id="twelve">12</div>
+  </div>
   <script>
     for (let i = 1; i <= 12; i++) {
       for (let j = 1; j <= 12; j++) {

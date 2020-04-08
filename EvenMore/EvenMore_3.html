@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Even More 3</title>
+</head>
+
+<body>
+  <h1>Even More 3</h1>
+  <p>Modify the previous program such that only the users Alice and Bob are greeted with their names.</p>
+  <br />
+  <h2 id="message"></h2>
+  <script>
+    function hello() {
+      let name = prompt("What's your name?")
+      if (name == "Bob" || name == "Alice") {
+        document.querySelector('#message').innerHTML = "Hello, " + name + "!"
+      } else {
+        document.querySelector('#message').innerHTML = "You're not Bob or Alice"
+      }
+    }
+    hello();
+  </script>
+</body>
+
+</html>

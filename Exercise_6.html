@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 6</title>
+</head>
+
+<body>
+  <h1>Exercise 6 - Make it red</h1>
+  <ol>
+    <li>Create a web page with half a dozen paragraphs on it.</li>
+    <li>Add a click handler. When you click a paragraph it goes red.</li>
+  </ol>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias suscipit exercitationem aspernatur unde dicta
+    illum dolorem a, ad similique quod eos voluptatum ratione est placeat eaque corrupti quas laboriosam ducimus!
+
+  </p>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias suscipit exercitationem aspernatur unde dicta
+    illum dolorem a, ad similique quod eos voluptatum ratione est placeat eaque corrupti quas laboriosam ducimus!
+  </p>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias suscipit exercitationem aspernatur unde dicta
+    illum dolorem a, ad similique quod eos voluptatum ratione est placeat eaque corrupti quas laboriosam ducimus!
+  </p>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias suscipit exercitationem aspernatur unde dicta
+    illum dolorem a, ad similique quod eos voluptatum ratione est placeat eaque corrupti quas laboriosam ducimus!
+  </p>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias suscipit exercitationem aspernatur unde dicta
+    illum dolorem a, ad similique quod eos voluptatum ratione est placeat eaque corrupti quas laboriosam ducimus!
+  </p>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias suscipit exercitationem aspernatur unde dicta
+    illum dolorem a, ad similique quod eos voluptatum ratione est placeat eaque corrupti quas laboriosam ducimus!
+  </p>
+
+  <script>
+    let paragraph = document.querySelectorAll("p");
+    paragraph.forEach(function (p) {
+      p.addEventListener("click", function () {
+        if (p.style.color == "red") {
+          p.style.color = "black";
+        } else {
+          p.style.color = "red";
+        }
+      })
+    });
+  </script>
+</body>
+
+</html>

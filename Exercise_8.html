@@ -1,0 +1,43 @@
+1. Review the list of events on:
+<http: //api.jquery.com/category/events />
+2. Create code that listens for a hover event. When the user rolls over a div, place the word "over" in that div.
+3. When the user mouses out of the div, place the word "out" in the div.
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 8</title>
+</head>
+
+<body>
+  <h1>Exercise 8 - Rollover</h1>
+  <ol>
+    <li>Create a text input field. Listen for the keyup event. Alert the value of the text box whenever keyup occurs.
+    </li>
+    <li>Get the value of an input field using: ​$​(​'input'​).​val​();</li>
+    <li>For bonus points, append the value of the text box into a div.</li>
+  </ol>
+  <div id="text"></div>
+  <label for="test">Hit the up key: </label>
+  <input type="text" name="test">
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>
+    $("input").keyup(function (e) {
+      e.preventDefault();
+      let value = $("input").val().trim();
+      if (value === "") {
+        $("input").focus();
+      } else {
+        alert(value);
+        $("#text").append(value);
+        $("input").val("");
+      }
+    })
+  </script>
+</body>
+
+</html>

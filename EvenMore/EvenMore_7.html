@@ -8,7 +8,7 @@
   <style>
     #grid {
       display: grid;
-      grid-template-columns: 200px 200px 200px;
+      grid-template-columns: 150px 150px 150px 150px 150px 150px;
       grid-gap: 10px;
       background-color: #fff;
       color: #444;
@@ -27,23 +27,63 @@
   <p>Write a program that prints a multiplication table for numbers up to 12.</p>
   <br />
   <div id="grid">
-    <div id="one">1</div>
-    <div id="two">2</div>
-    <div id="three">3</div>
-    <div id="four">4</div>
-    <div id="five">5</div>
-    <div id="six">6</div>
-    <div id="seven">7</div>
-    <div id="eight">8</div>
-    <div id="nine">9</div>
-    <div id="ten">10</div>
-    <div id="eleven">11</div>
-    <div id="twelve">12</div>
+    <div id="one"></div>
+    <div id="two"></div>
+    <div id="three"></div>
+    <div id="four"></div>
+    <div id="five"></div>
+    <div id="six"></div>
+    <div id="seven"></div>
+    <div id="eight"></div>
+    <div id="nine"></div>
+    <div id="ten"></div>
+    <div id="eleven"></div>
+    <div id="twelve"></div>
   </div>
   <script>
     for (let i = 1; i <= 12; i++) {
       for (let j = 1; j <= 12; j++) {
-        console.log(i + " x " + j + " = " + i * j)
+        let paragraph = document.createElement("p");
+        let equation = document.createTextNode(i + " x " + j + " = " + i * j);
+        paragraph.appendChild(equation);
+        switch (i) {
+          case 1:
+            document.querySelector("#one").appendChild(paragraph);
+            break;
+          case 2:
+            document.querySelector("#two").appendChild(paragraph);
+            break;
+          case 3:
+            document.querySelector("#three").appendChild(paragraph);
+            break;
+          case 4:
+            document.querySelector("#four").appendChild(paragraph);
+            break;
+          case 5:
+            document.querySelector("#five").appendChild(paragraph);
+            break;
+          case 6:
+            document.querySelector("#six").appendChild(paragraph);
+            break;
+          case 7:
+            document.querySelector("#seven").appendChild(paragraph);
+            break;
+          case 8:
+            document.querySelector("#eight").appendChild(paragraph);
+            break;
+          case 9:
+            document.querySelector("#nine").appendChild(paragraph);
+            break;
+          case 10:
+            document.querySelector("#ten").appendChild(paragraph);
+            break;
+          case 11:
+            document.querySelector("#eleven").appendChild(paragraph);
+            break;
+          case 12:
+            document.querySelector("#twelve").appendChild(paragraph);
+            break;
+        }
       }
     }
   </script>

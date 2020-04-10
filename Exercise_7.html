@@ -16,14 +16,14 @@
     <li>For bonus points, append the value of the text box into a div.</li>
   </ol>
   <div id="text"></div>
-  <label for="test">Hit the up key: </label>
+  <label for="test">Enter text here: </label>
   <input type="text" name="test">
 
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script>
-    $("input").keyup(function (e) {
-      e.preventDefault();
+    $("input").keyup(function () {
+      //keyup is triggered when a key is released after being pressed.
       let value = $("input").val().trim();
       if (value === "") {
         $("input").focus();

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Even More 9</title>
+  <style>
+  </style>
+</head>
+
+<body>
+  <h1>Even More 9</h1>
+  <p>
+    Write a guessing game where the user has to guess a secret number.
+  </p>
+  <p>
+    After every guess the program tells the user whether their number was too large or too small.
+  </p>
+  <p>
+    At the end of the game the number of tries needed should be
+    printed.
+  </p>
+  <p> It counts only as one try if they input the same number multiple times consecutively.
+  </p>
+  <form>
+    <label for="test">Guess a number between 1 and 25: </label>
+    <input type="number" name="test">
+    <button type="submit">Enter</button>
+  </form>
+  <br>
+  <div id="grid"></div>
+  <script>
+    const game = {
+      tries: 0,
+      previousGuess: null,
+      guessNumber: function (guess, number) {
+        if (guess == null) {
+          game.previousGuess = guess
+        } else if (guess !== game.previousGuess) {
+          game.tries++;
+        } else {
+          game.previousGuess = guess;
+        }
+        if (guess == number) {
+          return "Correct! It took you " + game.tries + " tries to guess " + number + "."
+        } else if (guess > number) {
+          return "Pick a smaller number."
+        } else if (guess < number) {
+          return "Pick a larger number."
+        }
+      },
+      display: function () {
+        const form = document.querySelector("form");
+        const display = document.querySelector("#grid");
+        let secretNumber = Math.floor((Math.random() * 25) + 1);
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          let guess = document.querySelector("input").value;
+          document.querySelector("#grid").innerHTML = game.guessNumber(guess, secretNumber)
+        })
+      }
+    }
+    game.display();
+  </script>
+</body>
+
+</html>

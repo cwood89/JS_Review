@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Even More 8</title>
+  <style>
+  </style>
+</head>
+
+<body>
+  <h1>Even More 8</h1>
+  <p>Write a program that prints all prime numbers.</p>
+  <br />
+  <h2>Sieve of Eratosthenes</h2>
+  <p>In mathematics, the sieve of Eratosthenes is an ancient algorithm for finding all prime numbers up to any given
+    limit.</p>
+  <p>To find all the prime numbers less than or equal to a given integer n by Eratosthenes' method:
+  </p>
+  <ol>
+    <li>
+      Create a list of consecutive integers from 2 through n: (2, 3, 4, ..., n).
+    </li>
+    <li>
+      Initially, let p equal 2, the smallest prime number.
+    </li>
+    <li>
+      Enumerate the multiples of p by counting in increments of p from 2p to n, and mark them in the list (these will be
+      2p, 3p, 4p, ...; the p itself should not be marked).
+    </li>
+    <li>Find the first number greater than p in the list that is not marked. If there was no such number, stop.
+      Otherwise, let p now equal this new number (which is the next prime), and repeat from step 3.
+    </li>
+    <li>
+      When the algorithm terminates, the numbers remaining not marked in the list are all the primes below n.
+    </li>
+  </ol>
+  <form>
+    <label for="test">Enter a number: </label>
+    <input type="number" name="test">
+    <button type="submit">Enter</button>
+  </form>
+  <br>
+  <div id="grid"></div>
+  <script>
+
+    const eratosthenes = function (n) {
+      // Eratosthenes algorithm to find all primes under n
+      var array = [], upperLimit = Math.sqrt(n), output = [];
+
+      // Make an array from 2 to (n - 1)
+      for (var i = 0; i < n; i++) {
+        array.push(true);
+      }
+
+      // Remove multiples of primes starting from 2, 3, 5,...
+      for (var i = 2; i <= upperLimit; i++) {
+        if (array[i]) {
+          for (var j = i * i; j < n; j += i) {
+            array[j] = false;
+          }
+        }
+      }
+
+      // All array[i] set to true are primes
+      for (var i = 2; i < n; i++) {
+        if (array[i]) {
+          output.push(i);
+        }
+      }
+
+      return output;
+    };
+    const form = document.querySelector("form")
+    const display = document.querySelector("#grid")
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      let number = document.querySelector("input").value;
+      display.innerHTML = "The prime numbers between 2 and " + number + " is: " + eratosthenes(number).join(", ");
+    })
+
+  </script>
+</body>
+
+</html>

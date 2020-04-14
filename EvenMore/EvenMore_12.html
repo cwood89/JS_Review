@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Even More 12</title>
+  <style>
+  </style>
+</head>
+
+<body>
+  <h1>Even More 12</h1>
+  <p>Write a function that reverses a list, preferably in place.</p>
+  <br>
+  <ol>
+    <li>121</li>
+    <li>43</li>
+    <li>72</li>
+    <li>93</li>
+    <li>231</li>
+    <li>95</li>
+    <li>30</li>
+  </ol>
+  <button>Click to reverse list!</button>
+  <script>
+    function reverse(array) {
+      //looping through half of the array
+      for (let i = 0; i <= Math.floor((array.length - 1) / 2); i++) {
+        let item = array[i]; //saving the original
+        array[i] = array[array.length - 1 - i]; // swapping the first for last 
+        array[array.length - 1 - i] = item; // swapping the last for the first
+      }
+      return array;
+    }
+
+    document.querySelector("button").addEventListener("click", function () {
+      let valueArray = [];
+      let listItems = document.querySelectorAll("li");
+      for (let i = 0; i < listItems.length; i++) {
+        valueArray.push(listItems[i].innerText)
+      }
+      reverse(valueArray);
+      let list = document.querySelector("ol")
+      list.innerHTML = "";
+      for (let i = 0; i < valueArray.length; i++) {
+        let item = document.createElement("li")
+        item.innerText = valueArray[i]
+        list.appendChild(item);
+      }
+    })
+
+  </script>
+</body>
+
+</html>

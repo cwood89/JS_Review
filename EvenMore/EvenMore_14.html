@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Even More 14</title>
+  <style>
+  </style>
+</head>
+
+<body>
+  <h1>Even More 14</h1>
+  <p>Write a function that returns the elements on odd positions in a list.</p>
+  <br>
+  <ol>
+    <li>121</li>
+    <li>43</li>
+    <li>72</li>
+    <li>93</li>
+    <li>231</li>
+    <li>95</li>
+    <li>30</li>
+  </ol>
+  <button>Click to return the odd elements in this list.</button>
+  <br>
+  <div id="grid"></div>
+  <script>
+    const button = document.querySelector("button");
+    let listItems = document.querySelectorAll("li");
+    let list = document.querySelector("ol")
+    button.addEventListener("click", function (e) {
+      e.preventDefault();
+      list.innerHTML = "";
+      for (let i = 0; i < listItems.length; i++) {
+        if ((i + 1) % 2 != 0) {
+          list.appendChild(listItems[i])
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

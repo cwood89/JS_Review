@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Even More 15</title>
+  <style>
+  </style>
+</head>
+
+<body>
+  <h1>Even More 15</h1>
+  <p> Write a function that computes the running total of a list.</p>
+  <br>
+  <ol>
+    <li>121</li>
+    <li>43</li>
+    <li>72</li>
+    <li>93</li>
+    <li>231</li>
+    <li>95</li>
+    <li>30</li>
+  </ol>
+  <form>
+    <label for="test">Enter a value: </label>
+    <input type="text" name="test">
+    <button type="submit">Enter</button>
+  </form>
+  <br>
+  <div id="grid"></div>
+  <script>
+    const button = document.querySelector("button");
+    let listItems = document.querySelectorAll("li");
+
+    button.addEventListener("click", function (e) {
+      e.preventDefault();
+      let inputValue = document.querySelector("input").value;
+      document.querySelector("input").value = "";
+      for (let i = 0; i < listItems.length; i++) {
+
+      }
+    })
+  </script>
+</body>
+
+</html>

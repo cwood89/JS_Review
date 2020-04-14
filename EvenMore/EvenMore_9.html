@@ -35,13 +35,12 @@
       tries: 0,
       previousGuess: null,
       guessNumber: function (guess, number) {
-        if (guess == null) {
-          game.previousGuess = guess
-        } else if (guess !== game.previousGuess) {
+        console.log(guess, number)
+        if (guess !== game.previousGuess) {
           game.tries++;
-        } else {
           game.previousGuess = guess;
         }
+
         if (guess == number) {
           return "Correct! It took you " + game.tries + " tries to guess " + number + "."
         } else if (guess > number) {
@@ -56,9 +55,11 @@
         let secretNumber = Math.floor((Math.random() * 25) + 1);
         form.addEventListener("submit", function (e) {
           e.preventDefault();
-          let guess = document.querySelector("input").value;
-          document.querySelector("#grid").innerHTML = game.guessNumber(guess, secretNumber)
+          let guess = document.querySelector("input");
+          document.querySelector("#grid").innerHTML = game.guessNumber(guess.value, secretNumber);
+          guess.value = '';
         })
+
       }
     }
     game.display();
